@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EA38D3E52B3CBE37C3FCA625E5D29E65A15243A2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EA38D3E52B3CBE37C3FCA625E5D29E65A15243A2" : 0,
+    "77769D796CEEC9B9E7F7232BCCC23F97B9E3B55E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2EE1AED0-0A33-42D1-A416-271E03D918D1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EA38D3E52B3CBE37C3FCA625E5D29E65A15243A2" : "parsetagram\/",
+    "77769D796CEEC9B9E7F7232BCCC23F97B9E3B55E" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "parsetagram",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "parsetagram.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:angelacaq\/-FBU-Project-1-Tipsy.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "77769D796CEEC9B9E7F7232BCCC23F97B9E3B55E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/angelacaq\/Parsetagram.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EA38D3E52B3CBE37C3FCA625E5D29E65A15243A2"
+    }
+  ]
+}
