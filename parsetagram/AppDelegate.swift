@@ -23,6 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://blooming-beyond-47199.herokuapp.com/parse"
             })
         )
+        
+        if PFUser.currentUser() != nil {
+            print("User is logged in")
+            // if there is a logged in user then load the home view controller
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeVC = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
+            window?.rootViewController = homeVC
+            window?.makeKeyAndVisible()
+ 
+        }
+        
         return true
     }
 
