@@ -113,7 +113,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         query.findObjectsInBackgroundWithBlock { (data: [PFObject]?, error: NSError?) -> Void in
             if let data = data {
+                let temp = self.posts?.count
                 self.posts = data
+                
+                if (temp < data.count) {
+                    print(temp)
+                    print(data.count)
+                    self.queryLimit += 20
+                }
+                
                 self.isMoreDataLoading = false
                 self.loadingMoreView!.stopAnimating()
                 
