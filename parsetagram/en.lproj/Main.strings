@@ -1,0 +1,48 @@
+
+/* Class = "UITabBarItem"; title = "User"; ObjectID = "717-Ed-2Tb"; */
+"717-Ed-2Tb.title" = "User";
+
+/* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "7kh-g6-kcG"; */
+"7kh-g6-kcG.normalTitle" = "Log Out";
+
+/* Class = "UIButton"; normalTitle = "W"; ObjectID = "BMt-Kx-anY"; */
+"BMt-Kx-anY.normalTitle" = "W";
+
+/* Class = "UILabel"; text = "username"; ObjectID = "HPD-su-DrN"; */
+"HPD-su-DrN.text" = "username";
+
+/* Class = "UITextField"; text = "Username"; ObjectID = "Ktx-yl-ObV"; */
+"Ktx-yl-ObV.text" = "Username";
+
+/* Class = "UITextField"; text = "Password"; ObjectID = "RpC-ar-R3d"; */
+"RpC-ar-R3d.text" = "Password";
+
+/* Class = "UILabel"; text = "username"; ObjectID = "SHh-Ex-xU9"; */
+"SHh-Ex-xU9.text" = "username";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "Urd-O1-96S"; */
+"Urd-O1-96S.normalTitle" = "Sign Up";
+
+/* Class = "UINavigationItem"; title = "Camera"; ObjectID = "Vve-Wc-GjJ"; */
+"Vve-Wc-GjJ.title" = "Camera";
+
+/* Class = "UITabBarItem"; title = "Camera"; ObjectID = "Xhf-4S-1Ef"; */
+"Xhf-4S-1Ef.title" = "Camera";
+
+/* Class = "UINavigationItem"; title = "Home"; ObjectID = "YbU-2B-1Sv"; */
+"YbU-2B-1Sv.title" = "Home";
+
+/* Class = "UIButton"; normalTitle = "Sign In"; ObjectID = "cM0-Iw-DRj"; */
+"cM0-Iw-DRj.normalTitle" = "Sign In";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "d6I-HG-EDz"; */
+"d6I-HG-EDz.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "time stamp"; ObjectID = "poA-h7-Frw"; */
+"poA-h7-Frw.text" = "time stamp";
+
+/* Class = "UIButton"; normalTitle = "x"; ObjectID = "rdD-o6-4hM"; */
+"rdD-o6-4hM.normalTitle" = "x";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "uog-JE-neO"; */
+"uog-JE-neO.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";

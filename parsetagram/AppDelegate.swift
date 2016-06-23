@@ -24,14 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         )
         
-        if PFUser.currentUser() != nil {
-            print("User is logged in")
+        if PFUser.currentUser() == nil {
+            print("User has not been logged in")
             // if there is a logged in user then load the home view controller
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let homeVC = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
+            let homeVC = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as UIViewController
             window?.rootViewController = homeVC
             window?.makeKeyAndVisible()
  
+        } else {
+            print("User is already logged in")
         }
         
         return true
