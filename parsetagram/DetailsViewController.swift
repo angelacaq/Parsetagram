@@ -16,7 +16,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var photoView: PFImageView!
     @IBOutlet weak var captionLabel: UILabel!
-    
+    @IBOutlet weak var profilePhotoImageView: PFImageView!
     var post:PFObject!
     
     override func viewDidLoad() {
@@ -24,7 +24,6 @@ class DetailsViewController: UIViewController {
         
         captionLabel.text = post["caption"] as? String
         photoView.file = post["media"] as? PFFile
-        photoView.loadInBackground()
         
         let date = post.updatedAt
         let dateFormatter = NSDateFormatter()
@@ -36,11 +35,28 @@ class DetailsViewController: UIViewController {
         let username: String? = user!.username
         usernameLabel.text = username
         
+        profilePhotoImageView.file = user!["profilePhoto"] as? PFFile
+        profilePhotoImageView.loadInBackground()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "userSegue" {
+            let postData = post
+            
+            let userViewController = segue.destinationViewController as! UserViewController
+            userViewController.user = postData["author"] as? PFUser
+        }
     }
     
 }

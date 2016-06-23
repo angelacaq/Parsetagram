@@ -22,13 +22,13 @@ The following **optional** features are implemented:
 
 - [X] Show the username and creation time for each post
 - [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse.
-- [ ] User Profiles:
-   - [ ] Allow the logged in user to add a profile photo
-   - [ ] Display the profile photo with each post
-   - [ ] Tapping on a post's username or profile photo goes to that user's profile page
+- [X] User Profiles:
+   - [X] Allow the logged in user to add a profile photo
+   - [X] Display the profile photo with each post
+   - [X] Tapping on a post's username or profile photo goes to that user's profile page
 - [ ] User can comment on a post and see all comments for each post in the post details screen.
 - [ ] User can like a post and see number of likes for each post in the post details screen.
-- [X] Run your app on your phone and use the camera to take the photo
+- [ ] Run your app on your phone and use the camera to take the photo
 
 
 The following **additional** features are implemented:

@@ -91,6 +91,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             cell.photoView.file = postData["media"] as? PFFile
             cell.photoView.loadInBackground()
+            
             cell.captionLabel.text = postData["caption"] as? String
             
             let user =  postData["author"] as? PFUser
@@ -102,6 +103,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
             cell.timestampLabel.text = dateFormatter.stringFromDate(date!)
+            
+            cell.usernameButton.tag = indexPath.row
+            
+            cell.profilePhotoImageView.file = user!["profilePhoto"] as? PFFile
+            cell.profilePhotoImageView.loadInBackground()
         }
         return cell
     }
@@ -112,17 +118,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         query.orderByDescending("createdAt")
         query.includeKey("author")
         query.limit = queryLimit
-
-        print(query.limit)
         
         query.findObjectsInBackgroundWithBlock { (data: [PFObject]?, error: NSError?) -> Void in
             if let data = data {
                 let temp = self.posts?.count
                 self.posts = data
                 
-                if (temp < data.count) {
-                    print(temp)
-                    print(data.count)
+                if (data.count == self.queryLimit && temp < data.count && refreshControl == nil) {
                     self.queryLimit += 20
                 }
                 
@@ -140,15 +142,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
 
-    
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier != "logoutSegue" {
+        if segue.identifier == "detailsSegue" {
             let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)
             let postData = posts![indexPath!.row]
@@ -157,7 +157,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
             let detailViewController = segue.destinationViewController as! DetailsViewController
             detailViewController.post = postData
-        }        
+        } else if segue.identifier == "userSegue" {
+            let button = sender as! UIButton
+            let postData = posts![button.tag]
+            
+            let userViewController = segue.destinationViewController as! UserViewController
+            userViewController.user = postData["author"] as? PFUser
+        }
     }
     
 

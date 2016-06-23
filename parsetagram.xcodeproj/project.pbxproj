@@ -108,12 +108,12 @@
 				D34839FB1D18992700EF19EF /* View Controllers */,
 				D381806F1D188CFC00A55B46 /* AppDelegate.swift */,
 				D3483A061D19EE7E00EF19EF /* PostTableViewCell.swift */,
+				D3483A001D19A55300EF19EF /* Post.swift */,
+				D34547811D1B5925004B3259 /* InfiniteScrollActivityView.swift */,
 				D38180761D188CFC00A55B46 /* Assets.xcassets */,
 				D3EC596A1D1B494D003C34BD /* Main.storyboard */,
 				D38180781D188CFC00A55B46 /* LaunchScreen.storyboard */,
 				D381807B1D188CFC00A55B46 /* Info.plist */,
-				D3483A001D19A55300EF19EF /* Post.swift */,
-				D34547811D1B5925004B3259 /* InfiniteScrollActivityView.swift */,
 			);
 			path = parsetagram;
 			sourceTree = "<group>";

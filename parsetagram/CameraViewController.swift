@@ -28,22 +28,11 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         
         // Do any additional setup after loading the view.
     }
-    
-    /*override func viewWillAppear(animated: Bool) {
-        // create object
-        captureSession = AVCaptureSession()
-        
-        // configure HQ session
-        captureSession!.sessionPreset = AVCaptureSessionPresetPhoto
-        
-        var backCamera = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-    }*/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     func imagePickerController(picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : AnyObject]) {
