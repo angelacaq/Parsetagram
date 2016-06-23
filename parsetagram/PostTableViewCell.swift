@@ -14,5 +14,6 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var photoView: PFImageView!
     @IBOutlet weak var captionLabel: UITextView!
+    @IBOutlet weak var timestampLabel: UILabel!
     
 }

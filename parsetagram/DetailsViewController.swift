@@ -32,6 +32,10 @@ class DetailsViewController: UIViewController {
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         timestampLabel.text = dateFormatter.stringFromDate(date!)
         
+        let user =  post["author"] as? PFUser
+        let username: String? = user!.username
+        usernameLabel.text = username
+        
     }
     
     override func didReceiveMemoryWarning() {

@@ -93,11 +93,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.photoView.loadInBackground()
             cell.captionLabel.text = postData["caption"] as? String
             
-            cell.usernameLabel.text = postData["author"] as? String
-            
-            let user = postData["author"] as? PFUser
+            let user =  postData["author"] as? PFUser
             let username: String? = user!.username
             cell.usernameLabel.text = username
+            
+            let date = postData.updatedAt
+            let dateFormatter = NSDateFormatter()
+            
+            dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+            cell.timestampLabel.text = dateFormatter.stringFromDate(date!)
         }
         return cell
     }
