@@ -46,6 +46,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
+    
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if (!isMoreDataLoading) {
             let scrollViewContentHeight = tableView.contentSize.height
@@ -76,10 +77,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let posts = posts {
-            return posts.count
+        if posts != nil {
+            return 1 //return posts.count
         }
         return 0;
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 52.0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -93,23 +98,46 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.photoView.loadInBackground()
             
             cell.captionLabel.text = postData["caption"] as? String
+        }
+        return cell
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if let posts = posts {
+            return posts.count
+        }
+        return 0
+    }
+
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        // Dequeue with the reuse identifier
+        let header = tableView.dequeueReusableCellWithIdentifier("HeaderCell") as! CustomHeaderCell
+        
+        if let posts = posts {
+            print(section)
+            
+            let postData = posts[section]
             
             let user =  postData["author"] as? PFUser
             let username: String? = user!.username
-            cell.usernameLabel.text = username
+            
+            header.usernameLabel.text = username
             
             let date = postData.updatedAt
             let dateFormatter = NSDateFormatter()
             
             dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-            cell.timestampLabel.text = dateFormatter.stringFromDate(date!)
+            header.timestampLabel.text = dateFormatter.stringFromDate(date!)
             
-            cell.usernameButton.tag = indexPath.row
+            header.usernameButton.tag = section
             
-            cell.profilePhotoImageView.file = user!["profilePhoto"] as? PFFile
-            cell.profilePhotoImageView.loadInBackground()
+            header.profilePhotoImageView.file = user!["profilePhoto"] as? PFFile
+            header.profilePhotoImageView.loadInBackground()
+            
         }
-        return cell
+        
+        return header
     }
     
     func updateQuery(refreshControl: UIRefreshControl? = nil) {
