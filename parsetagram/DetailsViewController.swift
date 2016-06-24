@@ -17,6 +17,8 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var photoView: PFImageView!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var profilePhotoImageView: PFImageView!
+    @IBOutlet weak var likeCountLabel: UILabel!
+    
     var post:PFObject!
     
     override func viewDidLoad() {
@@ -35,6 +37,9 @@ class DetailsViewController: UIViewController {
         let username: String? = user!.username
         usernameLabel.text = username
         
+        let likes = post["likesCount"]
+        likeCountLabel.text = String(likes)
+        
         profilePhotoImageView.file = user!["profilePhoto"] as? PFFile
         profilePhotoImageView.loadInBackground()
         
@@ -43,6 +48,15 @@ class DetailsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func onLikeButtonPressed(sender: AnyObject) {
+        post["likesCount"] = (post["likesCount"] as! Int) + 1
+        print(post["likesCount"])
+        post.saveInBackground()
+        
+        let likes = post["likesCount"]
+        likeCountLabel.text = String(likes)
     }
     
     // MARK: - Navigation

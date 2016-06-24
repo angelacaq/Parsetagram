@@ -92,12 +92,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if let posts = posts {
             
-            let postData = posts[indexPath.row]
+            let postData = posts[indexPath.section]
             
             cell.photoView.file = postData["media"] as? PFFile
             cell.photoView.loadInBackground()
             
             cell.captionLabel.text = postData["caption"] as? String
+            
+            cell.likeButton.tag = indexPath.section
         }
         return cell
     }
@@ -138,6 +140,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         return header
+    }
+    
+    @IBAction func onLikedButton(sender: AnyObject) {
+        let button = sender as! UIButton
+  
+        let postData = posts![button.tag]
+        postData["likesCount"] = (postData["likesCount"] as! Int) + 1
+        print(postData["likesCount"])
+        postData.saveInBackground()
+        
     }
     
     func updateQuery(refreshControl: UIRefreshControl? = nil) {

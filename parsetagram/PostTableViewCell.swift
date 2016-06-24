@@ -14,4 +14,5 @@ class PostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var photoView: PFImageView!
     @IBOutlet weak var captionLabel: UITextView!
+    @IBOutlet weak var likeButton: UIButton!
 }
