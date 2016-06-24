@@ -155,7 +155,7 @@ class UserViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "userSegue" {
+        if segue.identifier == "detailsSegue" {
             let cell = sender as! UICollectionViewCell
             let indexPath = collectionView.indexPathForCell(cell)
             let postData = posts![indexPath!.row]

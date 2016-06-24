@@ -101,7 +101,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hrl-9Z-fb0">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                                     <connections>
-                                                        <segue destination="4Mw-JA-Y2f" kind="show" identifier="userSegue" id="ZKX-rc-AJO"/>
+                                                        <segue destination="fMr-1c-5J6" kind="show" identifier="userSegue" id="IYg-tu-FBO"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -216,9 +216,6 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="car-5F-r4g">
                                 <rect key="frame" x="0.0" y="67" width="375" height="45"/>
-                                <connections>
-                                    <segue destination="4Mw-JA-Y2f" kind="show" identifier="userSegue" id="98z-M5-d5S"/>
-                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLE-GP-Lx9">
                                 <rect key="frame" x="0.0" y="126" width="375" height="490"/>
@@ -532,7 +529,7 @@
                                         <color key="backgroundColor" red="0.23814102564102568" green="0.23814102564102568" blue="0.23814102564102568" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="postImage" destination="pbK-4O-Vnw" id="ivN-mF-8KF"/>
-                                            <segue destination="djp-Ho-kZ2" kind="show" identifier="userSegue" id="6Pn-ti-Hbh"/>
+                                            <segue destination="djp-Ho-kZ2" kind="show" identifier="detailsSegue" id="6Pn-ti-Hbh"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -601,7 +598,7 @@
         <image name="speech" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZKX-rc-AJO"/>
-        <segue reference="6Pn-ti-Hbh"/>
+        <segue reference="7If-5u-1uJ"/>
+        <segue reference="jaS-jn-oKT"/>
     </inferredMetricsTieBreakers>
 </document>
