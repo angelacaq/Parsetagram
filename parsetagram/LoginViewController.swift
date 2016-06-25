@@ -32,6 +32,19 @@ class LoginViewController: UIViewController {
             if let error = error {
                 print("User login failed.")
                 print(error.localizedDescription)
+                
+                let alertController = UIAlertController(title: "Error", message: "Your login details were incorrect. Please try again.", preferredStyle: .Alert)
+                
+                // create an OK action
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    // handle response here.
+                }
+                // add the OK action to the alert controller
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true) {
+                }
+                
             } else {
                 print("User logged in successfully")
                 
@@ -58,9 +71,24 @@ class LoginViewController: UIViewController {
             if let error = error {
                 print(error.localizedDescription)
                 
+                let alertController:UIAlertController
                 if error.code == 202 {
                     print("Username is taken")
+                    alertController = UIAlertController(title: "Error", message: "That username has already been taken. Please try again.", preferredStyle: .Alert)
+                } else {
+                    alertController = UIAlertController(title: "Error", message: "Something is wrong with your sign-up details. Please try again.", preferredStyle: .Alert)
                 }
+                
+                // create an OK action
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    // handle response here.
+                }
+                // add the OK action to the alert controller
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true) {
+                }
+                
             } else {
                 print("User Registered successfully")
                 self.performSegueWithIdentifier("loginSegue", sender: nil)

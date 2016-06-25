@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import ParseUI
+import MBProgressHUD
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
     @IBOutlet weak var tableView: UITableView!
@@ -171,6 +172,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         query.includeKey("author")
         query.limit = queryLimit
         
+        if refreshControl == nil && !isMoreDataLoading {
+            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        }
         query.findObjectsInBackgroundWithBlock { (data: [PFObject]?, error: NSError?) -> Void in
             if let data = data {
                 let temp = self.posts?.count
@@ -180,13 +184,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     self.queryLimit += 20
                 }
                 
-                self.isMoreDataLoading = false
-                self.loadingMoreView!.stopAnimating()
-                
                 self.tableView.reloadData()
                 
                 if let refreshControl = refreshControl {
                     refreshControl.endRefreshing()
+                } else if (self.isMoreDataLoading) {
+                    self.isMoreDataLoading = false
+                    self.loadingMoreView!.stopAnimating()
+                } else {
+                    MBProgressHUD.hideHUDForView(self.view, animated: true)
                 }
             } else {
                 print(error?.localizedDescription)

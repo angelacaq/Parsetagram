@@ -2,7 +2,7 @@
 
 **Parsetagram** is a photo sharing app using Parse as its backend.
 
-Time spent: **X** hours spent in total
+Time spent: **22** hours spent in total
 
 ## User Stories
 
@@ -21,24 +21,19 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 - [X] Show the username and creation time for each post
-- [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse.
+- [X] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse.
 - [X] User Profiles:
    - [X] Allow the logged in user to add a profile photo
    - [X] Display the profile photo with each post
    - [X] Tapping on a post's username or profile photo goes to that user's profile page
 - [ ] User can comment on a post and see all comments for each post in the post details screen.
-- [ ] User can like a post and see number of likes for each post in the post details screen.
-- [ ] Run your app on your phone and use the camera to take the photo
-
-
-The following **additional** features are implemented:
-
-- [ ] List anything else that you can get done to improve the app functionality!
+- [X] User can like a post and see number of likes for each post in the post details screen.
+- [X] Run your app on your phone and use the camera to take the photo
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. How do you animate things?
+2. How do you make autolayout less of a pain?
 
 ## Video Walkthrough
 
@@ -57,7 +52,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I had a lot of issues with the requirements, especially when it came to Parse. The sign-in persistence took an unusually long amount of time, and with everything combined, I only managed to finish requirements on Friday morning. I wish I had had an extra day or two to implement user comments, autolayout, add a front-facing camera, and just spend more time on the UI, but I am satisfied with what I have considering that problems I had throughout the week.
 
 ## License
 

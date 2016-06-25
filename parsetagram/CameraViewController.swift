@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Foundation
+import MBProgressHUD
 
 class CameraViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -151,8 +152,10 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
      }
     
     @IBAction func onNavButtonPressed(sender: AnyObject) {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         Post.postUserImage(photoView.image, withCaption: captionTextView.text, withCompletion: nil)
         print("Posted user image!")
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
         
         view.reloadInputViews()
         captionView.hidden = true
