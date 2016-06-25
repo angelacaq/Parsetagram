@@ -48,7 +48,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## Notes
 
-I had a lot of issues with the requirements, especially when it came to Parse. The sign-in persistence took an unusually long amount of time, and with everything combined, I only managed to finish requirements on Friday morning. I wish I had had an extra day or two to implement user comments, autolayout, add a front-facing camera, fixed some bugs, and just spend more time on the UI, but I am satisfied with what I have considering that problems I had throughout the week.
+I had a lot of issues with the requirements, especially when it came to Parse. The sign-in persistence took an unusually long amount of time, and with everything combined, I only managed to finish requirements on Friday morning. I wish I had had an extra day or two to implement user comments, autolayout, add a front-facing camera, fix some bugs, and just spend more time on the UI, but I am satisfied with what I have considering the problems I had throughout the week.
 
 ## License
 
