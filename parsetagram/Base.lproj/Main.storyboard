@@ -200,7 +200,7 @@
             </objects>
             <point key="canvasLocation" x="2476.5" y="351.5"/>
         </scene>
-        <!--Details View Controller-->
+        <!--Photo-->
         <scene sceneID="RPu-H9-o9H">
             <objects>
                 <viewController id="djp-Ho-kZ2" customClass="DetailsViewController" customModule="parsetagram" customModuleProvider="target" sceneMemberID="viewController">
@@ -273,7 +273,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7Wz-Sz-pMW"/>
+                    <navigationItem key="navigationItem" title="Photo" id="7Wz-Sz-pMW"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="captionLabel" destination="5Zg-xt-GMS" id="Kyz-0X-JrG"/>
