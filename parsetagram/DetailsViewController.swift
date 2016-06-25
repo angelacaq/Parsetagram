@@ -25,7 +25,10 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         captionLabel.text = post["caption"] as? String
+        captionLabel.sizeToFit()
+        
         photoView.file = post["media"] as? PFFile
+        photoView.loadInBackground()
         
         let date = post.updatedAt
         let dateFormatter = NSDateFormatter()
@@ -38,7 +41,7 @@ class DetailsViewController: UIViewController {
         usernameLabel.text = username
         
         let likes = post["likesCount"]
-        likeCountLabel.text = String(likes)
+        likeCountLabel.text = String("\(likes) likes")
         
         profilePhotoImageView.file = user!["profilePhoto"] as? PFFile
         profilePhotoImageView.loadInBackground()
@@ -56,7 +59,11 @@ class DetailsViewController: UIViewController {
         post.saveInBackground()
         
         let likes = post["likesCount"]
-        likeCountLabel.text = String(likes)
+        if likes as! Int == 1 {
+            likeCountLabel.text = String("\(likes) like")
+        } else {
+            likeCountLabel.text = String("\(likes) likes")
+        }
     }
     
     // MARK: - Navigation

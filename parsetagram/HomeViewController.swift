@@ -39,6 +39,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var insets = tableView.contentInset
         insets.bottom += InfiniteScrollActivityView.defaultHeight
         tableView.contentInset = insets
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,6 +102,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.captionLabel.text = postData["caption"] as? String
             
             cell.likeButton.tag = indexPath.section
+            
+            let likes = postData["likesCount"]
+            if likes as! Int == 1 {
+                cell.likeLabel.text = String("\(likes) like")
+            } else {
+                cell.likeLabel.text = String("\(likes) likes")
+            }
         }
         return cell
     }
@@ -147,8 +156,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
   
         let postData = posts![button.tag]
         postData["likesCount"] = (postData["likesCount"] as! Int) + 1
-        print(postData["likesCount"])
         postData.saveInBackground()
+        
+        tableView.reloadData()
+        //let likes = postData["likesCount"]
+        //self.likeLabel.text = String("\(likes) likes")
         
     }
     
@@ -191,8 +203,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if segue.identifier == "detailsSegue" {
             let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)
-            let postData = posts![indexPath!.row]
-        
+            let postData = posts![indexPath!.section]
+            
             cell.selectionStyle = .None
         
             let detailViewController = segue.destinationViewController as! DetailsViewController

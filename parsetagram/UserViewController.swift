@@ -110,7 +110,6 @@ class UserViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         query.findObjectsInBackgroundWithBlock { (data: [PFObject]?, error: NSError?) -> Void in
             if let data = data {
-                print("yes hello")
                 let temp = self.posts?.count
                 self.posts = data
                 
